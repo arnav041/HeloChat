@@ -1,13 +1,153 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--default-font);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    --background: #12181b;
+    --boxshadow: rgba(0,0,0,0.7) 0px 10px 20px 0px;
+    --secondary-text-color: #b2becd;
+    --secondary-bg-color: #2a2e35;
+    --default-font: 'Source Sans Pro', sans-serif;
+    --nav-background: #2a2e35;
+    --nav-boxshadow: 4px 0 10px -3px #010101;
+}
+
+body {
+    background: var(--background);
+    width: 100vw;
+    height: 100vh;
+}
+
+/* font-family: 'Source Sans Pro', sans-serif; */
+
+/* Login Components Styles */
+
+.login-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background);
+}
+
+.login-box {
+    max-width: 512px;
+    padding: 1rem;
+    box-shadow: var(--boxshadow);
+}
+
+.login-btns {
+    width: 100%;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.btn {
+    width: 90%;
+    font-size: 1.2em;
+    padding: 1.25em 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-text-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+}
+
+.login-title {
+    font-size: 2em;
+    padding: 1.25em 1em 0.5em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.login-icon {
+    font-size: 1.5em;
+    margin-right: 3px;
+    margin-bottom: -6px;
+}
+
+/* Chats Header Styles */
+
+.chats-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--background);
+}
+
+.chats-header {
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    z-index: 1000;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-background);
+    color: var(--secondary-text-color);
+    padding: 0 3rem;
+    box-shadow: var(--nav-boxshadow);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px;
+    cursor: pointer;
+}
+
+.logo span {
+    font-size: 2em;
+    font-weight: 900;
+    margin-left: 5px;
+}
+
+.sign-out {
+    font-size: 2.2rem;
+    cursor: pointer;
+}
+
+/* Loading Spinner Styles */
+
+.loading-overlay {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-container {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 6px solid rgba(230, 230, 230, 0.6);
+    border-radius: 50%;
+    border-top-color: #636767;
+    animation: loading 1s ease-in-out infinite;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
 }
